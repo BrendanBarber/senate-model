@@ -1,0 +1,10 @@
+name: senate-model
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pip
+  - pip:
+      - "mesa[viz]>=3.0"

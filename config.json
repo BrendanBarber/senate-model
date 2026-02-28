@@ -1,0 +1,74 @@
+{
+    "model": {
+        "n_seats": 100,
+        "seed": 42,
+        "sessions_per_election_cycle": 6,
+        "ideology_noise": 0.15,
+        "approval_threshold": 0.5,
+        "vote_majority": 0.5
+    },
+
+    "demographics": {
+        "constraints": {
+            "max_within_category": 0.6,
+            "min_within_category": 0.05
+        },
+
+        "geographic_economic": {
+            "rural":    { "agricultural_labor": 0.3,  "industrial_labor": 0.1,  "public_sector": -0.2, "large_business": -0.2 },
+            "urban":    { "public_sector": 0.25,      "industrial_labor": 0.2,  "large_business": 0.1, "agricultural_labor": -0.3 },
+            "suburban": { "small_business": 0.2,      "large_business": 0.15,   "agricultural_labor": -0.2, "industrial_labor": -0.1 }
+        },
+
+        "geographic_cultural": {
+            "rural":    { "religious": 0.25,  "secular": -0.2 },
+            "urban":    { "secular": 0.25,    "religious": -0.2 },
+            "suburban": { "religious": 0.05,  "secular": -0.05 }
+        },
+
+        "geographic_generational": {
+            "rural":    { "old": 0.2,        "young": -0.2 },
+            "urban":    { "young": 0.2,      "old": -0.15 },
+            "suburban": { "middle_age": 0.2, "young": -0.05, "old": -0.05 }
+        },
+
+        "economic_generational": {
+            "agricultural_labor": { "old": 0.15,        "young": -0.1 },
+            "industrial_labor":   { "old": 0.1,         "young": -0.05 },
+            "large_business":     { "middle_age": 0.1 },
+            "small_business":     { "middle_age": 0.1 },
+            "public_sector":      { "young": 0.05 }
+        },
+
+        "economic_cultural": {
+            "large_business":     { "secular": 0.15,   "religious": -0.1 },
+            "agricultural_labor": { "religious": 0.2,  "secular": -0.15 },
+            "industrial_labor":   { "religious": 0.05, "secular": -0.05 }
+        }
+    },
+
+    "bills": {
+        "max_bills_per_session": 10,
+        "min_provisions": 1,
+        "max_provisions": 4,
+        "min_groups_per_provision": 2,
+        "max_groups_per_provision": 5,
+        "parameter_min": 0.0,
+        "parameter_max": 20.0,
+        "ideology_noise": 0.2,
+        "winner_impact_min": 0.3,
+        "winner_impact_max": 1.0,
+        "loser_impact_min": 0.3,
+        "loser_impact_max": 1.0,
+        "zero_sum_noise": 0.2
+    },
+
+    "deals": {
+        "acceptance_threshold": 0.5,
+        "min_deal_tolerance": 1,
+        "max_deal_tolerance": 5,
+        "relationship_boost_on_accept": 0.05,
+        "relationship_penalty_on_reject": 0.02,
+        "relationship_penalty_on_break": 0.1
+    }
+}
