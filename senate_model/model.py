@@ -471,9 +471,10 @@ class SenateModel(mesa.Model):
         self.session_history.append({
             "session": self.current_session,
             "bill_id": self.active_bill.id,
-            "status":  self.active_bill.status.value,
+            "status": self.active_bill.status.value,
             "yes": yes_n,
-            "no":  no_n,
+            "no": no_n,
+            "votes": dict(votes),
         })
 
         if self.bill_queue:
